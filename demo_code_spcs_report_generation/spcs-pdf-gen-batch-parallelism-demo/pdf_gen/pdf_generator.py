@@ -1,4 +1,3 @@
-
 """ Python Module to generate PDF reports based on the input dataframe values"""
 
 from fpdf import FPDF

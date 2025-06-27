@@ -1,4 +1,4 @@
-""" Main PDF Generator Module that will be built as an image and loaded into SPCS to generate PDF reports - Trial using Batch Jobs Parallelism
+""" Main PDF Generator Module that will be built as an image and loaded into SPCS to generate PDF reports - Demo using Batch Jobs Parallelism
 Arguments: From YAML file"""
 
 import argparse
@@ -23,9 +23,9 @@ SNOWFLAKE_ROLE = os.getenv("SNOWFLAKE_ROLE")
 SNOWFLAKE_WAREHOUSE = os.getenv("SNOWFLAKE_WAREHOUSE") 
 
 # PrPr Environment variable from SPCS 
-SNOWFLAKE_JOB_INDEX = os.getenv("SNOWFLAKE_JOB_INDEX") 
+SNOWFLAKE_JOB_INDEX = os.getenv("SNOWFLAKE_JOB_INDEX")  ## This variable holds the value of the replica number
 
-pdf_title = "Sample PDF Report Generator - Powered by Snowflake's Snowpark"
+pdf_title = "Sample PDF Report Generator - Powered by Snowflake's SPCS"
 base_path = os.path.dirname(os.path.realpath(__file__))
 file_path = os.path.join(base_path, 'cust')
 os.makedirs('cust', exist_ok=True)

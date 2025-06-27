@@ -1,11 +1,8 @@
-SNOWFLAKE_REPO=sfpscogs-sjegadeeswaran-azure-demo.registry.snowflakecomputing.com/spcs_db/spcs_sc/spcs_repo
-SNOWFLAKE_URL=sfpscogs-sjegadeeswaran-azure-demo.registry.snowflakecomputing.com
+SNOWFLAKE_REPO=<orgname>-<accountname>.registry.snowflakecomputing.com/<db>/<schema>/<reponame>
+SNOWFLAKE_URL=<orgname>-<accountname>.registry.snowflakecomputing.com
 DOCKER_IMAGE=pdf_gen_demo_batchjob_parallel_image
 SNOWFLAKE_COMPUTE_POOL=spcs_compute_pool
-SNOWFLAKE_CONNECTION=az_snow_sbx_cust_demo_rsa
-
-help:          ## Show this help.
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+SNOWFLAKE_CONNECTION=<connection string from toml file>
 
 login:         ## Login to Snowflake Docker repo
 	snow spcs image-registry token --connection $(SNOWFLAKE_CONNECTION) --format=JSON | docker login $(SNOWFLAKE_URL) --username 0sessiontoken --password-stdin
