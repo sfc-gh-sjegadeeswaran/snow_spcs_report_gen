@@ -1,0 +1,8 @@
+spec:
+  container:
+  - name: main
+    image: /spcs_db/spcs_sc/spcs_repo/pdf_gen_demo_batchjob_parallel_image:latest
+    env:
+      SNOWFLAKE_WAREHOUSE: spcs_wh
+    args:
+    - "--month_part=1992-01-01"
